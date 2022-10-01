@@ -1,5 +1,4 @@
 def asm_pio(*args, **kwargs):
-    """prueba"""
     def decorador(programa):
         def compilador():
             print("Parámetros", kwargs)
@@ -7,7 +6,7 @@ def asm_pio(*args, **kwargs):
             return None
         return compilador
     return decorador
-
+'''Se define un decorador para ejecutar el programa, tambien se define un compilador para que compile e inicie el programa()'''
 def decorador_instr(fun_inst):
     def decoracion_instr(self,*args, **kwargs):
         fun_inst(self,*args, **kwargs)
@@ -22,6 +21,7 @@ class PIO():
 
 class StateMachine:
   def __init__(self, id_, program, freq=125000000, **kwargs):
+      '''Se crea una clase constructor'''
         global sm_iniciandose,fsms
         sm_iniciandose=self
         #print('StateMachine.__init__',id_, program, freq, kwargs)
@@ -34,7 +34,7 @@ class StateMachine:
 
 
   def active(self, x=None):
-    '''Esta rutina simula exclisivamnte esa FSM. Sería interesante crear simulación en parlelo con otras FSM'''
+    '''Esta rutina simula exclusivamnte esa FSM. Sería interesante crear simulación en parlelo con otras FSM'''
     if x==1:
         print('Está pendiente de realizar la simulacón')
 
